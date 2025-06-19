@@ -18,18 +18,11 @@ classDiagram
         - String name
         - Double preco
         - Integer quantidade
-        + getName()
-        + setName()
-        + getPreco()
-        + setPreco()
-        + getQuantidade()
-        + setQuantidade()
+      
     }
 
     class ItemVenda {
         - Produto produto
-        + getProduto()
-        + setProduto()
         + subTotal() double
         + toString()
     }
@@ -39,17 +32,11 @@ classDiagram
         - String cpf
         - String email
         - String telefone
-        + getNome()
-        + getCpf()
-        + getEmail()
-        + getTelefone()
     }
 
     class Venda {
         - LocalDate momento
         - StatusPedido status
-        - Usuario usuario
-        - List~ItemVenda~ list
         + adicionarItem()
         + removerItem()
         + total() double
@@ -63,11 +50,22 @@ classDiagram
         ENVIADO
         ENTREGUE
     }
+    class ProdutoDigital {
+      +tipoEntrega(): String
+    }
+    
+    class ProdutoFisico {
+      +tipoEntrega(): String
+    }
 
+  
     Venda "1" --> "1" Usuario
     Venda "1" --> "*" ItemVenda
     ItemVenda "1" --> "1" Produto
+    ProdutoDigital --|> Produto
+    ProdutoFisico --|> Produto
     Venda --> StatusPedido
+    
 ```
 ## 💻 Tecnologias Utilizadas
 
