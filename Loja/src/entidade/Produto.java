@@ -32,6 +32,11 @@ public class Produto {
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
+
+	public String tipoEntrega() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
